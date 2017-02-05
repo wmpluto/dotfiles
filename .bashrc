@@ -2,10 +2,10 @@
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/Applications/gcc-arm-none-eabi-5_4-2016q3/bin"
 
-alias ll='ls -al'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export NVM_DIR="/Users/mwang/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+alias ll='ls -al'
 
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
             --cache=$HOME/.npm/.cache/cnpm \
@@ -61,3 +61,4 @@ function parse_git_dirty {
 
 export PS1="\u@\h:\w\[\e[1;36m\]\`parse_git_branch\`\[\e[0m\]\\n\\$ "
 source ~/.git-completion.bash
+
